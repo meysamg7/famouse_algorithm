@@ -19,3 +19,12 @@ const triangle = triangleGenerator(numOfRaw, [[1]])
 for(let i=0; i<triangle.length ; i++){
   console.log(triangle[i]+"\n")
 }
+
+
+
+
+/**
+ * big O Complexity:
+      Recursive Row Generation: O(numOfRaw ^ 2)
+      Printing Rows: 𝑂(numOfRaw)
+ */
