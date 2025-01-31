@@ -30,4 +30,9 @@ function partition(array: number[], low: number, high: number): number {
   const myArray: number[] = [64, 34, 25, 12, 22, 11, 90, 5];
   quickSort(myArray);
   console.log("Sorted array:", myArray);
+
   
+
+
+// time complexity O(nlogn)
+// worst case scenario for Quicksort is O(n^2)
