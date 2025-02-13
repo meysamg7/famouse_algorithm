@@ -1,0 +1,71 @@
+# The Tree data structure can be useful in many cases:
+
+    Hierarchical Data: File systems, organizational models, etc.
+    Databases: Used for quick data retrieval.
+    Routing Tables: Used for routing data in network algorithms.
+    Sorting/Searching: Used for sorting data and searching for data.
+    Priority Queues: Priority queue data structures are commonly implemented using trees, such as binary heaps.
+
+
+# Tree Terminology and Rules
+    The first node in a tree is called the root node.
+    A link connecting one node to another is called an edge.
+    A parent node has links to its child nodes. Another word for a parent node is internal node.
+    A node can have zero, one, or many child nodes.
+    A node can only have one parent node.
+    Nodes without links to other child nodes are called leaves, or leaf nodes.
+    The tree height is the maximum number of edges from the root node to a leaf node. The height of the tree above is 2.
+    The height of a node is the maximum number of edges between the node and a leaf node.
+    The tree size is the number of nodes in the tree.
+
+# Types of Trees:
+    Trees are a fundamental data structure in computer science, used to represent hierarchical relationships.
+
+    Binary Trees: Each node has up to two children, the left child node and the right child node. This structure is the foundation for more complex tree 
+        types like Binay Search Trees and AVL Trees.
+        This restriction, that a node can have a maximum of two child nodes, gives us many benefits:
+            Algorithms like traversing, searching, insertion and deletion become easier to understand, to implement, and run faster.
+            Keeping data sorted in a Binary Search Tree (BST) makes searching very efficient.
+            Balancing trees is easier to do with a limited number of child nodes, using an AVL Binary Tree for example.
+            Binary Trees can be represented as arrays, making the tree more memory efficient.
+
+    Binary Search Trees (BSTs): A type of Binary Tree where for each node, the left child node has a lower value, and the right child node has a higher value.
+    AVL Trees: A type of Binary Search Tree that self-balances so that for every node, the difference in height between the left and right subtrees is at most
+        one. This balance is maintained through rotations when nodes are inserted or deleted.
+
+
+# Binary Tree Traversal
+    Going through a Tree by visiting every node, one node at a time, is called traversal.
+    Since Arrays and Linked Lists are linear data structures, there is only one obvious way to traverse these: start at the first element, or node, and 
+    continue to visit the next until you have visited them all.
+    But since a Tree can branch out in different directions (non-linear), there are different ways of traversing Trees.
+    There are two main categories of Tree traversal methods:
+    Breadth First Search (BFS) is when the nodes on the same level are visited before going to the next level in the tree. This means that the tree is 
+    explored in a more sideways direction.
+    Depth First Search (DFS) is when the traversal moves down the tree all the way to the leaf nodes, exploring the tree branch by branch in a downwards 
+    direction.
+    There are three different types of DFS traversals:
+        pre-order
+        in-order
+        post-order
+
+
+# Binary Search Trees:
+    A Binary Search Tree (BST) is a type of Binary Tree data structure, where the following properties must be true for any node "X" in the tree:
+        The X node's left child and all of its descendants (children, children's children, and so on) have lower values than X's value.
+        The right child, and all its descendants have higher values than X's value.
+        Left and right subtrees must also be Binary Search Trees.
+
+    Another way to check if a Binary Tree is BST, is to do an in-order traversal and check if the resulting list of values are in an increasing order.
+    These properties makes it faster to search, add and delete values than a regular binary tree.
+
+    On a Binary Search Tree, operations like inserting a new node, deleting a node, or searching for a node are actually O(h). That means that the higher 
+    the tree is (h), the longer the operation will take.for searching value is O(logn) if the tree is "balanced", 
+
+
+# AVL Trees
+    The AVL Tree is a type of Binary Search Tree, AVL trees are self-balancing, which means that the tree height is kept to a minimum so that a very fast
+    runtime is guaranteed for searching, inserting and deleting nodes, with time complexity O(logn).
+    The only difference between a regular Binary Search Tree and an AVL Tree is that AVL Trees do rotation operations in addition, to keep the tree balance.
+    A Binary Search Tree is in balance when the difference in height between left and right subtrees is less than 2.
+
