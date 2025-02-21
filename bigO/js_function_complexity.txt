@@ -1,0 +1,8 @@
+#### array:
+push is O(1), however, in practice it will encounter an O(N) copy costs at engine defined boundaries as the slot array needs to be reallocated. These boundaries are typically logarithmic.
+pop is O(1) with a similar caveat to push but the O(N) copy is rarely encountered as it is often folded into garbage collection (e.g. a copying collector could only copy the used part of an array).
+shift is at worst O(N) however it can, in specially cases, be implemented as O(1) at the cost of slowing down indexing so your mileage may vary.
+slice is O(N) where N is end - start. Not a tremendous amount of optimization opportunity here without significantly slowing down writes to both arrays.
+splice is, worst case, O(N). There are array storage techniques that divide N by a constant but they significantly slow down indexing. If an engine uses such techniques you might notice unusually slow operations as it switches between storage techniques triggered by access pattern changes.
+One you didn't mention, is sort. It is, in the average case, O(N log N). However, depending on the algorithm chosen by the engine, you could get O(N^2) in some cases. For example, if the engine uses QuickSort (even with an late out to InsertionSort), it has well-known N^2 cases. This could be a source of DoS for your application. If this is a concern either limit the size of the arrays you sort (maybe merging the sub-arrays) or bail-out to HeapSort.
+
